@@ -41,12 +41,41 @@ namespace Trips.Controllers
             return Ok(_mapper.Map<ICollection<Branch>, ICollection<BranchResource>>(branches));
         }
 
+        [HttpGet, Route("{id}/branches/updatable")]
+        public async Task<IActionResult> ListBranchForDivisionUpdatable(int id)
+        {
+            //TBD: to implement logic
+            return await ListBranchForDivision(id);
+        }
+
         [HttpGet, Route("{id}/cans")]
-        public async Task<IActionResult> ListCansForDivision(int id)
+        public async Task<IActionResult> ListCanForDivision(int id)
         {
             var cans = await _unitOfWork.Organization.FindCans(c => c.DivisionId == id);
 
             return Ok(_mapper.Map<ICollection<Can>, ICollection<CanResource>>(cans));
+        }
+
+        [HttpGet, Route("{id}/cans/updatable")]
+        public async Task<IActionResult> ListCanForDivisionUpdatable(int id)
+        {
+            //TBD: to implement logic
+            return await ListCanForDivision(id);
+        }
+
+        [HttpGet, Route("{id}/canallocations")]
+        public async Task<IActionResult> ListCanAllocationForDivision(int id)
+        {
+            var canAllocations = await _unitOfWork.Allocations.FindCanAllocations(c => c.DivisionId == id);
+
+            return Ok(_mapper.Map<ICollection<CanAllocation>, ICollection<CanAllocationResource>>(canAllocations));
+        }
+
+        [HttpGet, Route("{id}/cansallocations/updatable")]
+        public async Task<IActionResult> ListCanAllocationForDivisionUpdatable(int id)
+        {
+            //TBD: to implement logic
+            return await ListCanAllocationForDivision(id);
         }
 
         [HttpPost]

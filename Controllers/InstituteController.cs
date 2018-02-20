@@ -41,6 +41,13 @@ namespace Trips.Controllers
             return Ok(_mapper.Map<ICollection<Division>, ICollection<DivisionResource>>(divisions));
         }
 
+        [HttpGet, Route("{id}/divisions/updatable")]
+        public async Task<IActionResult> ListDivisionForInstituteUpdatable(int id)
+        {
+            //TBD: to implement logic
+            return await ListDivisionForInstitute(id);
+        }
+
         [HttpPost]
         public async Task<IActionResult> AddInstitute([FromBody] InstituteResource instituteResource)
         {

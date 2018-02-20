@@ -5,6 +5,10 @@ namespace Trips.Persistence
     public class UnitOfWork : IUnitOfWork
     {
         private readonly TripsDbContext _context;
+        public IOrganizationRepository Organization { get; private set; }
+        public IAllocationRepository Allocations { get; private set; }
+        public IUserRoleRepository UserRoles { get; private set; }
+        
         public UnitOfWork(TripsDbContext context)
         {
             _context = context;
@@ -12,10 +16,7 @@ namespace Trips.Persistence
             Allocations = new AllocationRepository(_context);
             UserRoles = new UserRoleRepository(_context);
         }
-        public IOrganizationRepository Organization { get; private set; }
-        public IAllocationRepository Allocations { get; private set; }
-        public IUserRoleRepository UserRoles { get; private set; }
-        
+
         public async Task<int> Complete()
         {
             return await _context.SaveChangesAsync();
