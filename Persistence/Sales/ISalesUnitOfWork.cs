@@ -9,6 +9,6 @@ namespace Sales.Persistence
         IProductRepository Products { get; }
         IOrderRepository Orders { get; }
         IOrderDetailRepository OrderDetails { get; }
-        Task<int> Complete();
+        int Complete();
     }
 }

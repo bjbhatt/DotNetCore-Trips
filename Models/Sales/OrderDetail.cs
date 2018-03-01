@@ -1,6 +1,8 @@
 //using System.ComponentModel.DataAnnotations;
 //using System.ComponentModel.DataAnnotations.Schema;
 
+using System;
+
 namespace Sales.Models
 {
 
@@ -13,6 +15,8 @@ namespace Sales.Models
         public int ProductId { get; set; }
         public int Quantity { get; set; }
         public decimal UnitPrice { get; set; }
+        public DateTime CreateTimeStamp { get; set; }
+        public DateTime? UpdateTimeStamp { get; set; }
 
         #region Navigation Properties
 

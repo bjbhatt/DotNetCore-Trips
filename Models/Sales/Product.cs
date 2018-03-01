@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 //using System.ComponentModel.DataAnnotations;
@@ -13,6 +14,8 @@ namespace Sales.Models
         public string Name { get; set; }
         public string Category { get; set; }
         public decimal UnitPrice {get; set;}
+        public DateTime CreateTimeStamp { get; set; }
+        public DateTime? UpdateTimeStamp { get; set; }
 
         #region Navigation Properties
 

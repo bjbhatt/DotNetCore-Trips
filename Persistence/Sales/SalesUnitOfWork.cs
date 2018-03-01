@@ -19,9 +19,9 @@ namespace Sales.Persistence
             OrderDetails = new OrderDetailRepository(_context);
         }
 
-        public async Task<int> Complete()
+        public int Complete()
         {
-            return await _context.SaveChangesAsync();
+            return _context.SaveChanges();
         }
 
         public void Dispose()

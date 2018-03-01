@@ -11,9 +11,10 @@ using System;
 namespace Trips.Migrations.SalesDb
 {
     [DbContext(typeof(SalesDbContext))]
-    partial class SalesDbContextModelSnapshot : ModelSnapshot
+    [Migration("20180301204727_CreateUpdateTimeStamp")]
+    partial class CreateUpdateTimeStamp
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
