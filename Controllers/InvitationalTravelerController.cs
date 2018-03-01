@@ -12,7 +12,7 @@ namespace Trips.Controllers
     [Route("/api/organization/invitationaltravelers")]
     public class InvitationalTravelerController : BaseController
     {
-        public InvitationalTravelerController(IMapper mapper, IUnitOfWork unitOfWork)
+        public InvitationalTravelerController(IMapper mapper, ITripsUnitOfWork unitOfWork)
             : base(mapper, unitOfWork)
         {
         }

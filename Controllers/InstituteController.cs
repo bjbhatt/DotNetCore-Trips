@@ -12,7 +12,7 @@ namespace Trips.Controllers
     [Route("/api/organization/institutes")]
     public class InstituteController : BaseController
     {
-        public InstituteController(IMapper mapper, IUnitOfWork unitOfWork)
+        public InstituteController(IMapper mapper, ITripsUnitOfWork unitOfWork)
             : base(mapper, unitOfWork)
         {
         }

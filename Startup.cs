@@ -28,7 +28,7 @@ namespace Trips
             services.AddScoped<IOrganizationRepository, OrganizationRepository>();
             services.AddScoped<IAllocationRepository, AllocationRepository>();
             services.AddScoped<IUserRoleRepository, UserRoleRepository>();
-            services.AddScoped<IUnitOfWork, UnitOfWork>();
+            services.AddScoped<ITripsUnitOfWork, TripsUnitOfWork>();
 
             services.AddAutoMapper();
             services.AddDbContext<TripsDbContext>(options => options.UseSqlServer(Configuration.GetConnectionString("Default")));

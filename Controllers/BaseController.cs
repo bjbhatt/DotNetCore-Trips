@@ -12,8 +12,8 @@ namespace Trips.Controllers
     public class BaseController : Controller
     {
         protected readonly IMapper _mapper;
-        protected readonly IUnitOfWork _unitOfWork;
-        public BaseController(IMapper mapper, IUnitOfWork unitOfWork)
+        protected readonly ITripsUnitOfWork _unitOfWork;
+        public BaseController(IMapper mapper, ITripsUnitOfWork unitOfWork)
         {
             _mapper = mapper;
             _unitOfWork = unitOfWork;

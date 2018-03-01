@@ -2,14 +2,14 @@ using System.Threading.Tasks;
 
 namespace Trips.Persistence
 {
-    public class UnitOfWork : IUnitOfWork
+    public class TripsUnitOfWork : ITripsUnitOfWork
     {
         private readonly TripsDbContext _context;
         public IOrganizationRepository Organization { get; private set; }
         public IAllocationRepository Allocations { get; private set; }
         public IUserRoleRepository UserRoles { get; private set; }
         
-        public UnitOfWork(TripsDbContext context)
+        public TripsUnitOfWork(TripsDbContext context)
         {
             _context = context;
             Organization = new OrganizationRepository(_context);

@@ -3,7 +3,7 @@ using System.Threading.Tasks;
 
 namespace Trips.Persistence
 {
-    public interface IUnitOfWork : IDisposable
+    public interface ITripsUnitOfWork : IDisposable
     {
         IOrganizationRepository Organization { get; }
         IAllocationRepository Allocations { get; }

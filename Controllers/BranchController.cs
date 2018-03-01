@@ -12,7 +12,7 @@ namespace Trips.Controllers
     [Route("/api/organization/branches")]
     public class BranchController : BaseController
     {
-        public BranchController(IMapper mapper, IUnitOfWork unitOfWork)
+        public BranchController(IMapper mapper, ITripsUnitOfWork unitOfWork)
             : base(mapper, unitOfWork)
         {
         }

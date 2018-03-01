@@ -12,7 +12,7 @@ namespace Trips.Controllers
     [Route("/api/organization/divisions")]
     public class DivisionController : BaseController
     {
-        public DivisionController(IMapper mapper, IUnitOfWork unitOfWork)
+        public DivisionController(IMapper mapper, ITripsUnitOfWork unitOfWork)
             : base(mapper, unitOfWork)
         {
         }

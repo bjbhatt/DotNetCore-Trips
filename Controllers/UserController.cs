@@ -12,7 +12,7 @@ namespace Trips.Controllers
     [Route("/api/users")]
     public class UserController : BaseController
     {
-        public UserController(IMapper mapper, IUnitOfWork unitOfWork)
+        public UserController(IMapper mapper, ITripsUnitOfWork unitOfWork)
             : base(mapper, unitOfWork)
         {
         }

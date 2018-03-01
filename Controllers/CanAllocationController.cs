@@ -13,7 +13,7 @@ namespace Trips.Controllers
     [Route("/api/allocations/canallocations")]
     public class CanAllocationController : BaseController
     {
-        public CanAllocationController(IMapper mapper, IUnitOfWork unitOfWork)
+        public CanAllocationController(IMapper mapper, ITripsUnitOfWork unitOfWork)
             : base(mapper, unitOfWork)
         {
         }

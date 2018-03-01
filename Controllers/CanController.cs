@@ -12,7 +12,7 @@ namespace Trips.Controllers
     [Route("/api/organization/cans")]
     public class CanController :BaseController
     {
-        public CanController(IMapper mapper, IUnitOfWork unitOfWork)
+        public CanController(IMapper mapper, ITripsUnitOfWork unitOfWork)
             : base(mapper, unitOfWork)
         {
         }
