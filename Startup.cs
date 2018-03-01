@@ -10,6 +10,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Trips.Persistence;
 using AutoMapper;
+using Sales.Persistence;
 
 namespace Trips
 {
@@ -30,7 +31,14 @@ namespace Trips
             services.AddScoped<IUserRoleRepository, UserRoleRepository>();
             services.AddScoped<ITripsUnitOfWork, TripsUnitOfWork>();
 
+            services.AddScoped<ICustomerRepository, CustomerRepository>();
+            services.AddScoped<IProductRepository, ProductRepository>();
+            services.AddScoped<IOrderRepository, OrderRepository>();
+            services.AddScoped<IOrderDetailRepository, OrderDetailRepository>();
+            services.AddScoped<ISalesUnitOfWork, SalesUnitOfWork>();
+
             services.AddAutoMapper();
+            services.AddDbContext<TripsDbContext>(options => options.UseSqlServer(Configuration.GetConnectionString("Trips")));
             services.AddDbContext<TripsDbContext>(options => options.UseSqlServer(Configuration.GetConnectionString("Sales")));
             services.AddMvc();
         }
