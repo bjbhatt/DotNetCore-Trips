@@ -31,7 +31,7 @@ namespace Trips
             services.AddScoped<ITripsUnitOfWork, TripsUnitOfWork>();
 
             services.AddAutoMapper();
-            services.AddDbContext<TripsDbContext>(options => options.UseSqlServer(Configuration.GetConnectionString("Default")));
+            services.AddDbContext<TripsDbContext>(options => options.UseSqlServer(Configuration.GetConnectionString("Sales")));
             services.AddMvc();
         }
 
