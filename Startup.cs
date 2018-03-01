@@ -39,7 +39,7 @@ namespace Trips
 
             services.AddAutoMapper();
             services.AddDbContext<TripsDbContext>(options => options.UseSqlServer(Configuration.GetConnectionString("Trips")));
-            services.AddDbContext<TripsDbContext>(options => options.UseSqlServer(Configuration.GetConnectionString("Sales")));
+            services.AddDbContext<SalesDbContext>(options => options.UseSqlServer(Configuration.GetConnectionString("Sales")));
             services.AddMvc();
         }
 
