@@ -1,17 +1,22 @@
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+//using System.ComponentModel.DataAnnotations;
+//using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Sales.Models
 {
+    //[Table("Orders", Schema = "dbo")]
     public class Order
     {
+        //[Key]
         public int Id { get; set; }
         public int CustomerId { get; set; }
         public DateTime OrderDate { get; set; }
 
         #region Navigation Properties
 
+        //[ForeignKey("CustomerId")]
         public Customer Customer { get; set; }
         public ICollection<OrderDetail> OrderDetails { get; set;}
 

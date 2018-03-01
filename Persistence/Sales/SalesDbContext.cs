@@ -1,6 +1,7 @@
 using System.Linq;
 using Microsoft.EntityFrameworkCore;
 using Sales.Models;
+using Trips.Persistence.Sales.EntityConfigurations;
 
 namespace Sales.Persistence
 {
@@ -17,11 +18,13 @@ namespace Sales.Persistence
         public DbSet<OrderDetail> OrderDetails { get; set; }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            foreach (var relationship in modelBuilder.Model.GetEntityTypes().SelectMany(e => e.GetForeignKeys()))
-            {
-                relationship.DeleteBehavior = DeleteBehavior.Restrict;
-            }
+            modelBuilder.ApplyConfiguration(new CustomerConfiguration());
+                
+            modelBuilder.ApplyConfiguration(new ProductConfiguration());
 
+            modelBuilder.ApplyConfiguration(new OrderConfiguration());
+
+            modelBuilder.ApplyConfiguration(new OrderDetailConfiguration());
         }
     }
 }
